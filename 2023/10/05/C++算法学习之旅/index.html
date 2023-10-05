@@ -658,7 +658,54 @@ unorderedmap&lt;int, int&gt;map;
 <p><strong><em>Vector容器末尾添加一个元素：emplace_back()、push_back()</em></strong></p>
 <p><strong><em>Memset()：按字节赋值数组中的元素</em></strong></p>
 <p><strong><em>Auto：根据后面的值来推测前面的数据类型，简化变量初始化</em></strong></p>
+<p><strong><em>链表和数组</em></strong></p>
+<pre><code>void traverse(vector&lt;int&gt; &amp; arr)
+&#123;
+    for(int i = 0; i&lt; arr.size();i++)
+    &#123;&#125;
+&#125;
 
+class ListNode&#123;
+    public:
+    int val;
+    ListNode* next;
+&#125;; 
+
+void traverse(ListNode* head)
+&#123;
+    for(ListNode* p = head; p!=nullptr;p=p-&gt;next)
+    &#123;
+        迭代访问
+    &#125;
+&#125;
+
+void traverse(ListNode* head)
+&#123;
+    traverse(head-&gt;next);递归访问
+&#125;
+</code></pre><p><strong><em>二叉树遍历</em></strong></p>
+<pre><code>struct TreeNode&#123;
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+&#125;;
+void traverse(TreeNode* root)
+&#123;
+    traverse(root -&gt; left);
+    traverse(root -&gt; right);
+&#125;
+</code></pre><p><strong><em>N叉树遍历</em></strong></p>
+<pre><code>class TreeNode&#123;
+    public:
+    int val;
+    vector&lt;TreeNode*&gt; children;
+&#125;;
+void traverse(TreeNode* root)
+&#123;
+    for(TreeNode* child:root-&gt;children)
+        traverse(child);
+&#125;
+</code></pre>
                 
             </div>
             <hr/>
